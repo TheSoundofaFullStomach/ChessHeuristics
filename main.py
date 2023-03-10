@@ -1,7 +1,8 @@
-import learn as learn
+import learn as Learn
 import chess
 import numpy
 import pandas
+from stockfish import Stockfish
 
 import Board
 
@@ -17,4 +18,6 @@ def print_start():
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_start()
-    # Board.init_board()
+    Board.init_board()
+
+    Stockfish.
