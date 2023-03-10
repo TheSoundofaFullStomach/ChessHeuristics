@@ -14,9 +14,10 @@ import ChessGame
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-#MAIN.PY
+# GLOBAL
 
 board = Board
+chess_game = ChessGame
 
 def print_start():
     # Use a breakpoint in the code line below to debug your script.
@@ -26,20 +27,13 @@ def print_start():
 # Press the green button in the gutter to run the script.
 def run_chess():
 
-    global board
-
-    board = Board
-    player_color = random.randint(1, 2)
-
+    global chess_game
 
     print_start()
-    Board.init_board()
+    chess_game = ChessGame
+    ChessGame.init_chess_game()
 
     stockfish = Stockfish
-
-    if player_color == 2:
-        print("let stockfish go first")
-
 
 if __name__ == '__main__':
     run_chess()

@@ -5,6 +5,9 @@ import pandas
 import chess
 import BoardState
 
+
+# GLOBAL
+
 # board: board[rank][file] [row][col]
 # moves: "[player][piecetype][currentlocation][destination]" "bbb1a2" -> black bishop from b1 to a2
 # players: white = "w", black "b"
@@ -12,7 +15,7 @@ import BoardState
 
 board = [[]]
 board_FEN = ""
-board_chess = chess.Board()
+board_chess = chess.Board() # the board object provided by the library
 board_state = [[], []]
 is_whitetomove = True
 is_blacktomove = False
@@ -23,12 +26,14 @@ def init_board():
     print("Initializing board")
     global board
     global board_FEN
+    global board_chess
     global board_state
     global is_whitetomove
     global is_blacktomove
 
     board = board = [["  "]*9 for i in range(9)]
-    board_FEN = chess.Board()
+    board_chess = chess.Board()
+    board_FEN = board_chess.fen()
     print(board)
 
 def reset_board():
@@ -108,6 +113,10 @@ def convert_arr_idx_to_square(idx):
 
     return square
 
+
+# TODO
+def convert_FEN_to_board():
+    print("board")
 
 # TODO later
 def find_existing_pieces(piece_type, player):
