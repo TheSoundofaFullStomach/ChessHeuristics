@@ -5,7 +5,6 @@ import pandas
 import chess
 import BoardState
 
-
 # GLOBAL
 
 # board: board[rank][file] [row][col]
